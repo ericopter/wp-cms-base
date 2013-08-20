@@ -1,0 +1,5 @@
+scratch.*
+*.diff
+_*.txt
+.DS_Store
+*.log

@@ -1,0 +1,72 @@
+// Basic Styles
+@baseFontColor:					#333;
+@bodyBackground:				#fff;
+
+// Typography
+@sansFontFamily:        		"Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       		Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        		Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@baseFontSize:          		14px;
+@baseFontFamily:        		@sansFontFamily;
+@baseLineHeight:        		20px;
+@altFontFamily:         		@serifFontFamily;
+
+@paragraphMargin:				0 0 20px 0;
+
+@headingBaseFontFamily:			@serifFontFamily;
+@headingBaseFontColor: 			#111;
+@headingBaseFontWeight:			normal;
+
+@headingsFontFamily:    		inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    		bold;    // instead of browser default, bold
+@headingsColor:         		inherit; // empty to use BS default, @textColor
+
+
+// Blockquotes
+@blockquoteMargin: 				0 0 20px;
+@blockquotePadding:				9px 20px 0 19px;
+@blockquoteBorderSize:			1px;
+@blockquoteBorderColor:			#ddd;
+
+// Links
+@linkColor:						#08c;
+@linkColorHover:				darken(@linkColor, 15%);
+
+// Lists
+@listBaseMargin:				0 0 20px 0;
+@listAltMargin:					0 0 20px 20px;
+@listItemMargin:				0 0 12px;
+@listItemLineHeight:			18px;
+@nestedListMargin:				4px 0 5px 30px;
+@nestedListItemMargin:			0 0 6px;
+
+// Images
+
+// Buttons
+@buttonMargin:					0 0 20px 0;
+@buttonPadding: 				8px 10px;
+
+// Tabs
+
+
+// Forms
+@formMargin:					0 0 20px;
+@formFieldsetMargin:			0 0 20px;
+@formElementWidth:				210px;
+@formElementMargin:				0 0 10px;
+@formElementPadding:			6px 4px;
+@formElementBackground: 		#fff;
+@formTextAreaMinHeight:			60px;
+@formSelectPadding: 			4px 0;
+
+// Base Grid
+@rowMarginBottom : 				20px; 			// padding below .row
+@gridColumns :					16; 			// number of grid columns
+@gridColumnWidth : 				40px; 			// column content area
+@gridColumnMargin : 			10px; 			// margin width each side of column
+
+// 768 Grid
+@grid768ColumnWidth : 			(768 / @gridColumns) - (@gridColumnMargin * 2);
+@gridMobilePortraitWidth :		300px; 
+@gridMobileLandscapeWidth : 	420px;

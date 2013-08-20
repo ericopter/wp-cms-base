@@ -1,0 +1,97 @@
+.hori-nav {
+	position : relative;
+	z-index : 997;
+	min-height : 35px;
+	margin : 0 auto;
+	padding : 0;
+	line-height : 35px;
+}
+
+.hori-nav li {
+	display : block;
+	position : relative;
+	float : left;
+	margin : 0;
+	line-height: 35px;
+}
+
+.hori-nav li a {
+	display : block;
+	padding : 0 10px;
+	text-decoration : none;
+}
+
+/* Horizontal Menu's Second Level */
+.hori-nav .sub-menu {
+	display : none;
+	position : absolute;
+	top : 100%;
+	left : 0;
+	min-width : 100%;
+	margin : 0;
+	border-top : none;
+}
+
+.hori-nav li:hover > .sub-menu {
+	display : block;
+}
+
+.hori-nav .sub-menu li {
+	float : none;
+}
+
+.hori-nav .sub-menu li a {
+	float : none;
+	margin : 0;
+}
+
+/* Horizontal Menu's Third Level*/
+.hori-nav .sub-menu .sub-menu {
+	left : 100%;
+	top : 0;
+}
+
+/*
+	Global - Vertical Navigation
+*/
+.vert-nav {
+	position : relative;
+	margin : 0;
+	padding : 0;
+	line-height : 35px;
+}
+
+.vert-nav li {
+	position : relative;
+	margin : 0;
+	padding : 0;
+}
+
+.vert-nav li a {
+	display : block;
+	padding : 0 0 0 10px;
+	line-height : 35px;
+	text-decoration : none;
+}
+
+/* Vertical Menus Second Level*/
+.vert-nav .sub-menu {
+	margin : 0;
+}
+
+.vert-nav .sub-menu li a {}
+
+.vert-nav .sub-menu li a:before {
+	content : "> ";
+}
+
+/* Vertical Menus Third Level */
+.vert-nav .sub-menu .sub-menu {
+	font-size : 100%;
+}
+
+.vert-nav .sub-menu .sub-menu li a {}
+
+.vert-nav .sub-menu .sub-menu li a:before {
+	content : ">> ";
+}

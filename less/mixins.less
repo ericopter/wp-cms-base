@@ -1,0 +1,170 @@
+// Grid
+#grid {
+	
+	.core (@gridColumnWidth, @gridColumnMargin, @gridColumns) {
+		
+		// helper values
+		@columnTotalWidth : @gridColumnWidth + (@gridColumnMargin * 2);
+		@containerWidth : @columnTotalWidth * @gridColumns;
+		
+		// Recursive function
+		.spanX (@index) when (@index > 0) {
+			.span@{index} { .span(@index); }
+			.spanX(@index - 1);
+		}
+		.spanX (0) {}
+		
+		// 	outputing function
+		.span (@columns) {
+			width : (@columnTotalWidth * @columns) - (@gridColumnMargin * 2);
+		}
+		
+		// for thirds
+		.spanThirds() {
+			.span1Third {
+				width : (@containerWidth / 3) - (@gridColumnMargin * 2);
+			}
+			
+			.span2Thirds {
+				width : ((@containerWidth / 3) * 2) - (@gridColumnMargin * 2);
+			}
+			
+		}
+		
+		
+		.offsetX (@index) when (@index > 0) {
+			.offset@{index} { .offset(@index); }
+			.offsetX(@index - 1);
+		}
+		.offsetX(0) {}
+		
+		.offset (@columns) {
+			padding-left : (@columnTotalWidth * @columns);
+		}
+		
+		.offsetThirds() {
+			.offset1Third {
+				padding-left : (@containerWidth / 3);
+			}
+			
+			.offset2Thirds {
+				padding-left : ((@containerWidth / 3) * 2);
+			}
+		}
+		
+		.pushX (@index) when (@index > 0) {
+			.push@{index} { .push(@index); }
+			.pushX(@index - 1);
+		}
+		.pushX(0) {}
+		
+		.push(@columns) {
+			left : (@columnTotalWidth * @columns);
+		}
+		
+		.pullX(@index) when (@index > 0) {
+			.pull@{index} { .pull(@index); }
+			.pullX(@index - 1);
+		}
+		.pullX(0) {}
+			
+		.pull(@columns) {
+			left : -(@columnTotalWidth * @columns);
+		}
+		
+		// Start the output
+		.container { 
+			position: relative; 
+			width: @containerWidth; 
+			margin: 0 auto; 
+			padding: 0; 
+	
+			.column,
+			.columns {
+				position : relative;
+				float: left; 
+				display: inline; 
+				margin-left: 10px; 
+				margin-right: 10px;
+		
+				&.alpha {
+					margin-left : 0;
+				}
+		
+				&.omega {
+					margin-right : 0;
+				}
+			}
+		}
+
+		.row {
+			margin-bottom: @rowMarginBottom;
+		}
+		
+		.container {
+			// columns
+			.spanX(@gridColumns);
+			.spanThirds(); 
+			// offsets
+			.offsetX(@gridColumns - 1);
+			.offsetThirds();
+			// pushing
+			.pushX(@gridColumns - 1);
+			// pulling
+			.pullX(@gridColumns - 1);
+		}
+		
+	}
+	
+	// Mobile (Smaller resolution) versions
+	.mobile (@width, @gridColumns) {
+		
+		.spanX (@index) when (@index > 0) {
+			.span@{index} { .span(@index); }
+			.spanX(@index - 1);
+		}
+		.spanX(0) {}
+		
+		.span(@columns) {
+			width : @width;
+			padding : 0;
+			left : 0;
+		}
+		
+	    .container { 
+			width: @width; 
+			
+			.column,
+			.columns {
+				margin : 0;
+			}
+			
+			.spanX(@gridColumns);
+		}
+	}
+}
+
+// Gradients
+.gradientBackground (@from: #ddd) {
+	background: @from; // Old browsers
+	background: @from -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); // FF3.6+
+	background: @from -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); // Chrome,Safari4+
+	background: @from -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); // Chrome10+,Safari5.1+
+	background: @from -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); // Opera11.10+
+	background: @from -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); // IE10+
+	background: @from linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); // W3C
+}
+
+// Rounded Corners
+.borderRadius(@radius: 3px) {
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+}
+
+// Box Shadow
+.boxShadow(@x: 0, @y: 0, @blur: 3px) {
+	-moz-box-shadow: @x @y @blur rgba(0,0,0,.2);
+	-webkit-box-shadow: @x @y @blur rgba(0,0,0,.2);
+	box-shadow:  @x @y @blur rgba(0,0,0,.2);
+}

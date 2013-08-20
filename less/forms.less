@@ -1,0 +1,68 @@
+/* #Forms
+================================================== */
+
+form {
+	margin: @formMargin;
+}
+
+fieldset {
+	margin-bottom: @formFieldsetMargin;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+	border: 1px solid #ccc;
+	padding: @formElementPadding;
+	outline: none;
+	.borderRadius(2px);
+	font: 13px @sansFontFamily;
+	color: lighten(@baseFontColor, 25%);
+	margin: 0;
+	width: @formElementWidth;
+	max-width: 100%;
+	display: block;
+	margin: @formElementMargin;
+	background: @formElementBackground;
+}
+
+select {
+	padding: @formSelectPadding;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+	border: 1px solid #aaa;
+	color: lighten(@baseFontColor, 10%);
+	.boxShadow();
+}
+
+textarea {
+	min-height: @formTextAreaMinHeight;
+}
+
+label,
+legend {
+	display: block;
+	font-weight: bold;
+	font-size: @baseFontSize * 0.95; 
+}
+
+select {
+	width: @formElementWidth + 10;
+}
+
+input[type="checkbox"] {
+	display: inline;
+}
+
+label span,
+legend span {
+	font-weight: normal;
+	font-size: @baseFontSize * 0.95;
+	color: lighten(@baseFontColor, 10%);
+}
