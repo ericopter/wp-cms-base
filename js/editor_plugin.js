@@ -10,7 +10,7 @@
 				createControl:function(d,e)
 				{
 				
-					if(d=="echotheme_shortcodes_button"){
+					if(d=="ewd_shortcodes_button"){
 					
 						d=e.createMenuButton( "echotheme_shortcodes_button",{
 							title:"Insert Theme Shortcodes",

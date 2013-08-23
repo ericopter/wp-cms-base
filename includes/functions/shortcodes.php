@@ -16,11 +16,11 @@
  * @access public
  * @return void
  */
-function ewd_shortcode_add_shortcode_button() {
+function ewd_add_shortcode_button() {
 	if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) return;
 	if ( get_user_option('rich_editing') == 'true') :
-		add_filter('mce_external_plugins', 'ewd_shortcode_add_shortcode_tinymce_plugin');
-		add_filter('mce_buttons', 'ewd_shortcode_register_shortcode_button');
+		add_filter('mce_external_plugins', 'ewd_add_shortcode_tinymce_plugin');
+		add_filter('mce_buttons', 'ewd_register_shortcode_button');
 	endif;
 }
 
@@ -31,8 +31,8 @@ function ewd_shortcode_add_shortcode_button() {
  * @param mixed $buttons
  * @return array
  */
-function ewd_shortcode_register_shortcode_button($buttons) {
-	array_push($buttons, "|", "ewd_shortcode_shortcodes_button");
+function ewd_register_shortcode_button($buttons) {
+	array_push($buttons, "|", "ewd_shortcodes_button");
 	return $buttons;
 }
 
@@ -43,9 +43,9 @@ function ewd_shortcode_register_shortcode_button($buttons) {
  * @param mixed $plugin_array
  * @return array
  */
-function ewd_shortcode_add_shortcode_tinymce_plugin($plugin_array) {
+function ewd_add_shortcode_tinymce_plugin($plugin_array) {
 	global $echotheme;
-	$plugin_array['echothemeShortcodes'] = get_bloginfo('template_url') . '/js/editor_plugin.js';
+	$plugin_array['echothemeShortcodes'] = get_template_directory_uri() . '/js/editor_plugin.js';
 	return $plugin_array;
 }
 
@@ -56,7 +56,8 @@ function ewd_shortcode_add_shortcode_tinymce_plugin($plugin_array) {
  * @param mixed $ver
  * @return int
  */
-function ewd_shortcode_refresh_mce( $ver ) {
+function ewd_refresh_mce( $ver ) {
+	throw new Exception('here');
 	$ver += 3;
 	return $ver;
 }
@@ -67,8 +68,8 @@ function ewd_shortcode_refresh_mce( $ver ) {
  * @see ewd_shortcode_add_shortcode_button()
  * @see ewd_shortcode_refresh_mce()
  */
-add_action( 'init', 'ewd_shortcode_add_shortcode_button' );
-add_filter( 'tiny_mce_version', 'ewd_shortcode_refresh_mce' );
+add_action( 'init', 'ewd_add_shortcode_button' );
+add_filter( 'tiny_mce_version', 'ewd_refresh_mce' );
 
 //////////////////////////////////////////////////////////////
 // Basic Components
