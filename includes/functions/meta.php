@@ -20,7 +20,7 @@ add_action('init', 'ewd_remove_headlinks');
 function ewd_title()
 {
 	/*
-	 * Print the <title> tag based on what is being viewed.
+	 * Print the title for the <title> tag based on what is being viewed.
 	 */
 	global $page, $paged;
 	
@@ -41,14 +41,19 @@ function ewd_title()
 		echo $separator . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
 }
 
-/*
-	Generate the custom meta description/keywords tags for our SEO smart theme
-*/
+/**
+ * Generate the custom meta description/keywords tags for our SEO smart theme
+ */
 function ewd_meta_tags()
 {
 	global $post;
 	$description = null;
 	$keywords = null;
+	
+	// output responsive meta tag if options set
+	if (function_exists('of_get_option') && of_get_option('site-responsive') == 'yes') {
+		echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+	}
 	
 	// if we have theme options and the meta description/keywords value is set
 	if (function_exists('of_get_option')) {
@@ -102,12 +107,15 @@ add_action('wp_enqueue_scripts', 'ewd_jquery');
  */
 function ewd_general_javascript()
 {
+	// load superfish script
+	wp_enqueue_script('superfish');
+	
+	// load general javascript file
 	wp_enqueue_script(
 		'general', 
 		get_template_directory_uri() . '/js/general.js', 
 		array('jquery')
 	);
-	wp_enqueue_script('superfish');
 }
 
 add_action('wp_enqueue_scripts', 'ewd_general_javascript');
@@ -120,10 +128,8 @@ function ewd_general_css()
 	wp_enqueue_style('style');
 	
 	// Include the responsive stylesheet?
-	if (function_exists('of_get_option')) {
-		if (of_get_option('site-responsive') == 'yes') {
-			wp_enqueue_style('responsive');
-		}
+	if (function_exists('of_get_option') && of_get_option('site-responsive') == 'yes') {
+		wp_enqueue_style('responsive');
 	}
 }
 
@@ -148,17 +154,17 @@ function ewd_post_wp_head()
 }
 
 /**
- * Function/hook for adding Shadowbox to a page
+ * Function/hook for adding Flexslider Slideshow assets to a page
  */
-function ewd_load_shadowbox()
+function ewd_load_flexslider()
 {
 	wp_enqueue_script(
-		'shadowbox', 
-		get_bloginfo('template_url') . '/includes/scripts/shadowbox/shadowbox.js', 
-		array('jquery')
-	);	
+		'flexslider', 
+		get_bloginfo('template_url') . '/includes/scripts/flexslider/jquery.flexslider-min.js', 
+		array('jquery-easing')
+	);
 }
-// add_action('ewd_pre_wp_head', 'ewd_load_shadowbox');
+// add_action('ewd_pre_wp_head', 'ewd_load_flexslider');
 
 /**
  * Function to load isotope
@@ -175,17 +181,17 @@ function ewd_load_isotope()
 // add_action('ewd_pre_wp_head', 'ewd_load_isotope');
 
 /**
- * Function/hook for adding Flexslider Slideshow assets to a page
+ * Function/hook for adding Shadowbox to a page
  */
-function ewd_load_flexslider()
+function ewd_load_shadowbox()
 {
 	wp_enqueue_script(
-		'flexslider', 
-		get_bloginfo('template_url') . '/includes/scripts/flexslider/jquery.flexslider-min.js', 
-		array('jquery-easing')
-	);
+		'shadowbox', 
+		get_bloginfo('template_url') . '/includes/scripts/shadowbox/shadowbox.js', 
+		array('jquery')
+	);	
 }
-// add_action('ewd_pre_wp_head', 'ewd_load_flexslider');
+// add_action('ewd_pre_wp_head', 'ewd_load_shadowbox');
 
 /**
  * Output google analytics from control panel

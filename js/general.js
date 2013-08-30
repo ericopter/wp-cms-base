@@ -2,7 +2,20 @@ $(document).ready(function() {
 	$('body').removeClass('no-js');
 	$('body').addClass('js-enabled');
 
-	$('form input[type=text]').each(function() {
+	fancyForms();
+	footerFixes();
+	
+	jQuery('.hori-nav').superfish({
+		speed : 'fast'
+	});
+});
+
+/*
+	Clear default form values
+*/
+function fancyForms() {
+	// add remove default form values
+	$('form input[type=text], form textarea').each(function() {
 		var val = $(this).val();
 
 		$(this).focus(function() {
@@ -18,10 +31,24 @@ $(document).ready(function() {
 		});
 	});
 	
-	jQuery('.hori-nav').superfish({
-		speed : 'fast'
+}
+
+/*
+	various fixes for the footer section
+*/
+function footerFixes() {
+	
+	// allow static text added in WP menu to be treated as such
+	$('#footer-nav a').each(function(e) {
+		if ($(this).attr('href') == undefined) {
+			$(this).addClass('no-decoration');
+		}
 	});
-});
+	
+	
+	// hide the footer nav last pipe ( | ) for ie
+	$('#footer-nav li:last-child span').hide();
+}
 
 // Content Toggle
 jQuery(function($){

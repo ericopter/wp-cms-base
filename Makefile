@@ -1,11 +1,12 @@
 INCLUDES = $(CURDIR)/includes/scripts/
-ISOTOPE = ${INCLUDES}"isotope/jquery.isotope.min.js"
 FLEXSLIDER = ${INCLUDES}"flexslider/jquery.flexslider-min.js"
+ISOTOPE = ${INCLUDES}"isotope/jquery.isotope.min.js"
 SHADOWBOX = ${INCLUDES}"shadowbox/shadowbox.js"
 GENERAL = $(CURDIR)/js/general.js
-INPUT = ${ISOTOPE} ${FLEXSLIDER} ${SHADOWBOX} ${GENERAL}
+INPUT = ${FLEXSLIDER} ${ISOTOPE} ${SHADOWBOX} ${GENERAL}
 BUILD_JS = ./js/build.js
 BUILD_JS_MIN = ./js/build.min.js
+RSYNC = @echo "enter sync command here"
 CHECK=\033[32m✔\033[39m
 HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
 
@@ -30,4 +31,4 @@ project-css:
 	@make -C less/
 	
 sync:
-	@echo "enter sync command here"
+	${RSYNC}

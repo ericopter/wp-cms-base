@@ -18,6 +18,7 @@ h3,
 h4,
 h5,
 h6 {
+	margin : 0 0 (@baseLineHeight / 2);
 	color: @headingBaseFontColor;
 	font-family: @headingBaseFontFamily;
 	font-weight: @headingBaseFontWeight; 
@@ -71,7 +72,7 @@ h4 small {
 }
 
 .subheader { 
-	color: #777; 
+	color: lighten(@headingBaseFontColor, 15%); 
 }
 
 

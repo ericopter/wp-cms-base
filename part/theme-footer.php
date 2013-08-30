@@ -10,3 +10,6 @@ if ((is_archive() || is_home() || is_single() || is_search()) && is_active_sideb
 	dynamic_sidebar('footer');
 }
 ?>
+<div class="span16 center">
+	Footer Section
+</div>
