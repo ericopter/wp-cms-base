@@ -742,8 +742,7 @@ ul.tabs {
   margin: 0 auto;
 }
 
-.container .column,
-.container .columns {
+.container [class*="span"] {
   position: relative;
   display: inline;
   float: left;
@@ -751,13 +750,11 @@ ul.tabs {
   margin-left: 10px;
 }
 
-.container .column.alpha,
-.container .columns.alpha {
+.container [class*="span"].alpha {
   margin-left: 0;
 }
 
-.container .column.omega,
-.container .columns.omega {
+.container [class*="span"].omega {
   margin-right: 0;
 }
 

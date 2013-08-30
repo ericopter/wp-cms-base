@@ -175,7 +175,7 @@ function ewd_comment($comment, $args, $depth) {
  */
 function content_class()
 {
-	$class = "span10 columns";
+	$class = "span10";
 	
 	if (function_exists('of_get_option') && 'left' == of_get_option('site-sidebar-position')) {
 		$class .= ' push6';
@@ -190,7 +190,7 @@ function content_class()
  */
 function sidebar_class()
 {
-	$class = "span6 columns";
+	$class = "span6";
 	
 	if (function_exists('of_get_option') && 'left' == of_get_option('site-sidebar-position')) {
 		$class .= ' pull10';

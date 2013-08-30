@@ -9,10 +9,13 @@ BUILD_JS_MIN = ./js/build.min.js
 CHECK=\033[32m✔\033[39m
 HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
 
-build: build-js build-css
+build: css
+
+all: project-js project-css
 	
+js: project-js
 	
-build-js:
+project-js:
 	@echo "\n${HR}";
 	@echo "Compiling js files"
 	@uglifyjs --comments=all ${INPUT} -bo ${BUILD_JS}
@@ -21,5 +24,10 @@ build-js:
 	@echo "\n${HR}";
 	
 
-build-css:
+css: project-css
+
+project-css:
 	@make -C less/
+	
+sync:
+	@echo "enter sync command here"
