@@ -16,7 +16,7 @@
 	ewd_post_wp_head();
 	?> 
 	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri() ?>/js/html5.js"></script>
+		<script src="<?php echo get_template_directory_uri() ?>/js/html5shiv.js"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ie.css" />
 	<![endif]-->
 	
@@ -35,3 +35,4 @@
 		
 		<div id="content">
 			<div class="container">
+				<?php get_template_part('part/flexslider'); ?>

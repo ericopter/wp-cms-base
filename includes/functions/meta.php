@@ -164,7 +164,7 @@ function ewd_load_flexslider()
 		array('jquery-easing')
 	);
 }
-// add_action('ewd_pre_wp_head', 'ewd_load_flexslider');
+add_action('ewd_pre_wp_head', 'ewd_load_flexslider');
 
 /**
  * Function to load isotope

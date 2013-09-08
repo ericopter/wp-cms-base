@@ -38,20 +38,27 @@ function create_post_type_slideshow()
 
 // define slideshow post type custom meta box inputs
 $slideshow_options = array(
-	'slide_display' => array(
+	'slide_display_title' => array(
 		'type' => 'checkbox', 
-		'name' => $prefix.'slide_display',
+		'name' => $prefix.'slide_display_title',
 		'std' => '',
-		'title' => __('Show Title and Description on Slide?', 'echotheme'),
-		'description' => __('Display the title and content on the slide?', 'echotheme')
+		'title' => __('Show Title on Slide?', 'echotheme'),
+		'description' => __('Display the title on the slide?', 'echotheme')
 	),
-	'slide_url' => array(
-		'type' => 'textfield', 
-		'name' => $prefix.'slide_url',
+	'slide_display_content' => array(
+		'type' => 'checkbox', 
+		'name' => $prefix.'slide_display_content',
 		'std' => '',
-		'title' => __('Slide Text Link Url', 'echotheme'),
-		'description' => __('Url to link the slide text to if set to display', 'echotheme')
-	)
+		'title' => __('Show Editor Content on Slide?', 'echotheme'),
+		'description' => __('Display the slide content on the slide?', 'echotheme')
+	),
+	// 'slide_url' => array(
+// 		'type' => 'textfield', 
+// 		'name' => $prefix.'slide_url',
+// 		'std' => '',
+// 		'title' => __('Slide Text Link Url', 'echotheme'),
+// 		'description' => __('Url to link the slide text to if set to display', 'echotheme')
+// 	)
 );
 
 // add $slideshow options to the meta box group

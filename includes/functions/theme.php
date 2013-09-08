@@ -33,6 +33,7 @@ function ewd_setup()
 	
 	// define the image theme sizes
 	add_image_size( 'theme-image', 520, 440, true );
+	add_image_size( 'flexslider', 940, 400, true);
 	
 	// define the theme menu areas
 	register_nav_menus(

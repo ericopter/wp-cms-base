@@ -37,12 +37,15 @@
 
 .flexslider .slides > li {
 	display: none;
+	position : relative;
+	margin : 0;
 	-webkit-backface-visibility: hidden;
 }
 	/* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img {
-	width: 100%;
 	display: block;
+	width: 100%;
+	height : auto;
 }
 
 .flex-pauseplay span {
@@ -80,18 +83,9 @@ html[xmlns] .slides {
 /* FlexSlider Default Theme
 *********************************/
 .flexslider {
-	margin: 0 0 60px;
+	margin: 0 0 30px;
 	background: #fff;
-	border: 4px solid #fff;
 	position: relative;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-o-border-radius: 4px;
-	border-radius: 4px;
-	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.2);
-	-o-box-shadow: 0 1px 4px rgba(0,0,0,.2);
-	box-shadow: 0 1px 4px rgba(0,0,0,.2);
 	zoom: 1;
 }
 
@@ -118,13 +112,19 @@ html[xmlns] .slides {
 
 /* Direction Nav */
 .flex-direction-nav {
-	*height: 0;}
+	*height: 0;
+}
+
+.flex-direction-nav li {
+	margin : 0;
+	line-height : 1;
+}
 
 .flex-direction-nav a  {
 	display: block;
-	width: 40px;
-	height: 40px;
-	margin: -20px 0 0;
+	width: 30px;
+	height: 30px;
+	margin: 0;
 	position: absolute;
 	top: 50%;
 	z-index: 10;
@@ -136,15 +136,17 @@ html[xmlns] .slides {
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease;
 	transition: all .3s ease;
+	text-indent : -999em;
 }
 
 .flex-direction-nav .flex-prev {
 	left: -50px;
+	background : url('../includes/scripts/flexslider/images/bg_direction_nav.png') no-repeat 0 center;
 }
 
 .flex-direction-nav .flex-next {
 	right: -50px;
-	text-align: right;
+	background : url('../includes/scripts/flexslider/images/bg_direction_nav.png') no-repeat -30px center;
 }
 
 .flexslider:hover .flex-prev {
@@ -165,17 +167,6 @@ html[xmlns] .slides {
 	opacity: 0!important;
 	filter:alpha(opacity=0);
 	cursor: default;
-}
-
-.flex-direction-nav a:before  {
-	font-family: "flexslider-icon";
-	font-size: 40px;
-	display: inline-block;
-	content: '\f001';
-}
-
-.flex-direction-nav a.flex-next:before  {
-	content: '\f002';
 }
 
 
@@ -214,7 +205,7 @@ html[xmlns] .slides {
 .flex-control-nav {
 	width: 100%;
 	position: absolute;
-	bottom: -40px;
+	bottom: -25px;
 	text-align: center;
 }
 
@@ -283,6 +274,17 @@ html[xmlns] .slides {
 	cursor: default;
 }
 
+
+/* Content Stuff  */
+.slide-info {
+	position : absolute;
+	bottom : 0;
+	left : 0;
+	width : 98%;
+	height : auto;
+	padding : 5px 1%;
+	background : rgba(255,255,255,0.95);
+}
 
 @media screen and (max-width: 860px) {
 
