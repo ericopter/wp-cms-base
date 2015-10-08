@@ -1,15 +1,14 @@
 <?php
 /**
- * shortcodes.php
- * 
- * this file defines and activates all the themes shortcodes and related features
- *
- * @author Eric Akkerman
+ * Wordpress editor modification functions
  */
 
 //////////////////////////////////////////////////////////////
-// Editor Shortcode Button
+// Editor Shortcode Menus
 /////////////////////////////////////////////////////////////
+
+add_action( 'init', 'ewd_add_shortcode_button' );
+
 /**
  * Add a button for shortcodes to the WP editor.
  *
@@ -17,11 +16,19 @@
  * @return void
  */
 function ewd_add_shortcode_button() {
-	if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) return;
-	if ( get_user_option('rich_editing') == 'true') :
-		add_filter('mce_external_plugins', 'ewd_add_shortcode_tinymce_plugin');
-		add_filter('mce_buttons', 'ewd_register_shortcode_button');
-	endif;
+    add_filter('mce_external_plugins', 'ewd_add_tinymce_plugin');
+    add_filter('mce_buttons', 'ewd_register_shortcode_button');
+}
+
+/**
+ * 
+ */
+function ewd_add_tinymce_plugin($plugin_array)
+{
+
+    $file = get_template_directory_uri() . '/includes/functions/editor/tinymce_scripts.js.php';
+    $plugin_array['ewd_tinymce_shortcodes_plugin'] = $file;
+    return $plugin_array;
 }
 
 /**
@@ -32,56 +39,55 @@ function ewd_add_shortcode_button() {
  * @return array
  */
 function ewd_register_shortcode_button($buttons) {
-	array_push($buttons, "|", "ewd_shortcodes_button");
+	array_push($buttons, "ewd_tinymce_shortcodes_select");
 	return $buttons;
 }
 
-/**
- * Add the shortcode button to TinyMCE
- *
- * @access public
- * @param mixed $plugin_array
- * @return array
- */
-function ewd_add_shortcode_tinymce_plugin($plugin_array) {
-	global $echotheme;
-	$plugin_array['echothemeShortcodes'] = get_template_directory_uri() . '/js/editor_plugin.js';
-	return $plugin_array;
-}
+add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
 
 /**
- * Force TinyMCE to refresh.
- *
- * @access public
- * @param mixed $ver
- * @return int
+ * Add the styles select menu
  */
-function ewd_refresh_mce( $ver ) {
-	throw new Exception('here');
-	$ver += 3;
-	return $ver;
+function my_mce_buttons_2( $buttons ) {
+    array_unshift( $buttons, 'styleselect' );
+    return $buttons;
 }
 
+// add_filter( 'tiny_mce_before_init', 'my_mce_before_init' );
+
 /**
- * Shortcode buttons
- *
- * @see ewd_shortcode_add_shortcode_button()
- * @see ewd_shortcode_refresh_mce()
+ * Add my style to the style select menu
  */
-add_action( 'init', 'ewd_add_shortcode_button' );
-add_filter( 'tiny_mce_version', 'ewd_refresh_mce' );
+function my_mce_before_init( $settings ) {
+
+    include 'editor/tinymce_styles_array.php';
+
+    $settings['style_formats'] = json_encode( $style_formats );
+
+    return $settings;
+
+}
 
 //////////////////////////////////////////////////////////////
 // Basic Components
 /////////////////////////////////////////////////////////////
 
 /**
- * Outputs the absolute url value
+ * Returns the absolute url value
  */
 function absurl_shortcode_func( $atts ){
     return ABSURL;
 }
 add_shortcode( 'absurl', 'absurl_shortcode_func' );
+
+/**
+ * Returns the site url value for usage in posts/widgets
+ */
+function ewd_shortcode_siteurl($atts)
+{
+    return site_url();
+}
+add_shortcode('siteurl', 'ewd_shortcode_siteurl');
 
 /**
  * Outputs a clearing element
