@@ -224,6 +224,11 @@ p a:visited {
 /* #Images
 ================================================== */
 
+img {
+  text-decoration: none;
+  border: 0;
+}
+
 img.scale-with-grid {
   height: auto;
   max-width: 100%;
