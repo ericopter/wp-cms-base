@@ -356,6 +356,22 @@
     width: 300px;
     padding: 0;
   }
+  .container .span1Third {
+    left: 0;
+    width: 300px;
+    padding: 0;
+  }
+  .container .span2Thirds {
+    left: 0;
+    width: 300px;
+    padding: 0;
+  }
+  .container .offset1Third {
+    padding-left: 0;
+  }
+  .container .offset2Thirds {
+    padding-left: 0;
+  }
 }
 
 /* #Mobile (Landscape)
@@ -450,5 +466,21 @@
     left: 0;
     width: 420px;
     padding: 0;
+  }
+  .container .span1Third {
+    left: 0;
+    width: 420px;
+    padding: 0;
+  }
+  .container .span2Thirds {
+    left: 0;
+    width: 420px;
+    padding: 0;
+  }
+  .container .offset1Third {
+    padding-left: 0;
+  }
+  .container .offset2Thirds {
+    padding-left: 0;
   }
 }

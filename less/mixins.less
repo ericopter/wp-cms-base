@@ -129,6 +129,32 @@
 			padding : 0;
 			left : 0;
 		}
+        
+		// for thirds
+		.spanThirds() {
+			.span1Third {
+    			width : @width;
+    			padding : 0;
+    			left : 0;
+			}
+			
+			.span2Thirds {
+    			width : @width;
+    			padding : 0;
+    			left : 0;
+			}
+			
+		}
+        
+		.offsetThirds() {
+			.offset1Third {
+				padding-left : 0;
+			}
+			
+			.offset2Thirds {
+				padding-left : 0;
+			}
+		}
 		
 	    .container { 
 			width: @width; 
@@ -139,6 +165,8 @@
 			}
 			
 			.spanX(@gridColumns);
+            .spanThirds();
+            .offsetThirds();
 		}
 	}
 }
