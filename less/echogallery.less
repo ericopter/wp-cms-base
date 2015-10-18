@@ -1,0 +1,73 @@
+/*
+	Current Projects Gallery
+*/
+
+.preload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    width: 100%;
+    height: 538px;
+    color: #FFF;
+    text-align: center;
+    background: #FFF;
+    
+}
+
+.preload div.preloading {
+    width: 100%;
+    height: 538px;
+    background: transparent url('../images/load-indicator.gif') no-repeat scroll 50% 50% #fff;
+}
+
+/* Images */
+
+#gallery-images-wrapper {
+    position : relative;
+    margin : 0 0 15px;
+    border : 1px solid #ddd;
+}
+
+#gallery-images {
+  position: relative;
+  float: none;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+#gallery-images li {
+  position: absolute;
+  right: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#gallery-images li img {
+    display : block;
+  height: auto;
+  width : 100%;
+}
+
+/* thumbnails */
+
+#gallery-thumbs {
+    text-align : right;
+  margin: 0;
+}
+
+#gallery-thumbs li {
+    display : inline-block;
+    float: none;
+    margin: 0 0 10px 10px;
+    border : 1px solid #ddd;
+    line-height : 0;
+    list-style: none;
+    
+}
+
+#gallery-thumbs li img {
+    width : 100%;
+    height : auto;
+}

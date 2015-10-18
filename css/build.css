@@ -1401,3 +1401,75 @@ html[xmlns] .slides {
     opacity: 1;
   }
 }
+
+/*
+	Current Projects Gallery
+*/
+
+.preload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  width: 100%;
+  height: 538px;
+  color: #FFF;
+  text-align: center;
+  background: #FFF;
+}
+
+.preload div.preloading {
+  width: 100%;
+  height: 538px;
+  background: transparent url('../images/load-indicator.gif') no-repeat scroll 50% 50% #ffffff;
+}
+
+/* Images */
+
+#gallery-images-wrapper {
+  position: relative;
+  margin: 0 0 15px;
+  border: 1px solid #ddd;
+}
+
+#gallery-images {
+  position: relative;
+  float: none;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+#gallery-images li {
+  position: absolute;
+  right: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#gallery-images li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* thumbnails */
+
+#gallery-thumbs {
+  margin: 0;
+  text-align: right;
+}
+
+#gallery-thumbs li {
+  display: inline-block;
+  float: none;
+  margin: 0 0 10px 10px;
+  line-height: 0;
+  list-style: none;
+  border: 1px solid #ddd;
+}
+
+#gallery-thumbs li img {
+  width: 100%;
+  height: auto;
+}

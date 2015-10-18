@@ -206,3 +206,17 @@ function ewd_analytics()
 }
 
 add_action('ewd_post_wp_head', 'ewd_analytics');
+
+/**
+ * Load Custom Gallery Slideshow
+ */
+function ewd_load_gallery_slideshow()
+{
+	wp_enqueue_script(
+		'echoGallery', 
+		get_bloginfo('template_url') . '/js/slideshow.js', 
+		array('jquery-easing'),
+		THEME_VERSION
+	);
+	
+}
