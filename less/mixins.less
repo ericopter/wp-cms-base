@@ -1,95 +1,95 @@
 // Grid
 #grid {
-	
+
 	.core (@gridColumnWidth, @gridColumnMargin, @gridColumns) {
-		
+
 		// helper values
 		@columnTotalWidth : @gridColumnWidth + (@gridColumnMargin * 2);
 		@containerWidth : @columnTotalWidth * @gridColumns;
-		
+
 		// Recursive function
 		.spanX (@index) when (@index > 0) {
 			.span@{index} { .span(@index); }
 			.spanX(@index - 1);
 		}
 		.spanX (0) {}
-		
+
 		// 	outputing function
 		.span (@columns) {
 			width : (@columnTotalWidth * @columns) - (@gridColumnMargin * 2);
 		}
-		
+
 		// for thirds
 		.spanThirds() {
 			.span1Third {
 				width : (@containerWidth / 3) - (@gridColumnMargin * 2);
 			}
-			
+
 			.span2Thirds {
 				width : ((@containerWidth / 3) * 2) - (@gridColumnMargin * 2);
 			}
-			
+
 		}
-		
-		
+
+
 		.offsetX (@index) when (@index > 0) {
 			.offset@{index} { .offset(@index); }
 			.offsetX(@index - 1);
 		}
 		.offsetX(0) {}
-		
+
 		.offset (@columns) {
 			padding-left : (@columnTotalWidth * @columns);
 		}
-		
+
 		.offsetThirds() {
 			.offset1Third {
 				padding-left : (@containerWidth / 3);
 			}
-			
+
 			.offset2Thirds {
 				padding-left : ((@containerWidth / 3) * 2);
 			}
 		}
-		
+
 		.pushX (@index) when (@index > 0) {
 			.push@{index} { .push(@index); }
 			.pushX(@index - 1);
 		}
 		.pushX(0) {}
-		
+
 		.push(@columns) {
 			left : (@columnTotalWidth * @columns);
 		}
-		
+
 		.pullX(@index) when (@index > 0) {
 			.pull@{index} { .pull(@index); }
 			.pullX(@index - 1);
 		}
 		.pullX(0) {}
-			
+
 		.pull(@columns) {
 			left : -(@columnTotalWidth * @columns);
 		}
-		
+
 		// Start the output
-		.container { 
-			position: relative; 
-			width: @containerWidth; 
-			margin: 0 auto; 
-			padding: 0; 
-	
+		.container {
+			position: relative;
+			width: @containerWidth;
+			margin: 0 auto;
+			padding: 0;
+
 			[class*="span"] {
 				position : relative;
-				float: left; 
-				display: inline; 
-				margin-left: 10px; 
+				float: left;
+				display: inline;
+				margin-left: 10px;
 				margin-right: 10px;
-		
+
 				&.alpha {
 					margin-left : 0;
 				}
-		
+
 				&.omega {
 					margin-right : 0;
 				}
@@ -99,11 +99,11 @@
 		.row {
 			margin-bottom: @rowMarginBottom;
 		}
-		
+
 		.container {
 			// columns
 			.spanX(@gridColumns);
-			.spanThirds(); 
+			.spanThirds();
 			// offsets
 			.offsetX(@gridColumns - 1);
 			.offsetThirds();
@@ -112,58 +112,61 @@
 			// pulling
 			.pullX(@gridColumns - 1);
 		}
-		
+
 	}
-	
+
 	// Mobile (Smaller resolution) versions
 	.mobile (@width, @gridColumns) {
-		
+
 		.spanX (@index) when (@index > 0) {
 			.span@{index} { .span(@index); }
 			.spanX(@index - 1);
 		}
 		.spanX(0) {}
-		
+
 		.span(@columns) {
 			width : @width;
 			padding : 0;
 			left : 0;
+			margin : 0;
 		}
-        
+
 		// for thirds
 		.spanThirds() {
 			.span1Third {
     			width : @width;
     			padding : 0;
     			left : 0;
+    			margin : 0;
 			}
-			
+
 			.span2Thirds {
     			width : @width;
     			padding : 0;
     			left : 0;
+    			margin : 0;
 			}
-			
+
 		}
-        
+
 		.offsetThirds() {
 			.offset1Third {
 				padding-left : 0;
 			}
-			
+
 			.offset2Thirds {
 				padding-left : 0;
 			}
 		}
-		
-	    .container { 
-			width: @width; 
-			
+
+	    .container {
+			width: @width;
+
 			.column,
 			.columns {
 				margin : 0;
 			}
-			
+
 			.spanX(@gridColumns);
             .spanThirds();
             .offsetThirds();
