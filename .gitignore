@@ -3,3 +3,4 @@ scratch.*
 _*.txt
 .DS_Store
 *.log
+node_modules
