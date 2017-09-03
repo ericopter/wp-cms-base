@@ -4,10 +4,4 @@ $(document).ready(function() {
 
 	fancyForms();
 	footerFixes();
-
-	jQuery('.hori-nav').superfish({
-		speed : 'fast'
-	});
-
-	console.log('done');
 });
