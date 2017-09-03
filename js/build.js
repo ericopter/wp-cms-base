@@ -319,7 +319,4 @@ $(document).ready(function() {
 
 	fancyForms();
 	footerFixes();
-
-
-	console.log('done');
 });

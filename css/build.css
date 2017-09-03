@@ -1005,6 +1005,10 @@ html[xmlns] .flexslider .slides {
 .flex-direction-nav {
   *height: 0;
 }
+.flex-direction-nav li {
+  margin: 0;
+  line-height: 40px;
+}
 .flex-direction-nav a {
   text-decoration: none;
   display: block;
