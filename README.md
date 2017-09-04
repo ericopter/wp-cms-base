@@ -8,4 +8,4 @@ Base code for Wordpress CMS development
 
 *TODO*
 
-Integrate compiled javascript file for production
+Add part template for ewdGallery. Improve gallery javascript.

@@ -21,7 +21,7 @@ function ewd_add_shortcode_button() {
 }
 
 /**
- * 
+ *
  */
 function ewd_add_tinymce_plugin($plugin_array)
 {
@@ -90,6 +90,15 @@ function ewd_shortcode_siteurl($atts)
 add_shortcode('siteurl', 'ewd_shortcode_siteurl');
 
 /**
+ * Returns the template directory url value for usage in posts/widgets
+ */
+function ewd_shortcode_templatedirectoryurl($atts)
+{
+    return get_template_directory_uri();
+}
+add_shortcode('templatedir', 'ewd_shortcode_templatedirectoryurl');
+
+/**
  * Outputs a clearing element
  */
 function ewd_shortcode_clear($atts, $content = null)
@@ -120,17 +129,17 @@ function ewd_shortcode_div($atts, $content = null)
 		'id' => null
 	),$atts));
 	$output = '<div';
-	
+
 	if ($id) {
 		$output .= ' id="' . $id . '"';
 	}
-	
+
 	if ($class) {
 		$output .= ' class="' . $class . '"';
 	}
-	
+
 	$output .= '>' . do_shortcode($content) . '</div>';
-	
+
 	return $output;
 }
 add_shortcode('div', 'ewd_shortcode_div');
@@ -166,11 +175,11 @@ function ewd_shortcode_tabs_func( $atts, $content = null ) {
     $tabs_nav .= '<div class="tabs-wrapper">';
     $tabs_nav .= '<ul class="tabs">';
 	$tabs_content .= '<ul class="tabs-content">';
-    
+
 	foreach ($tabs as $tab => $tab_atts) {
 		$id = str_replace(' ', '-', $tab_atts['title']);
 		$default = ( $tab == 0 ) ? ' class="active"' : '';
-	
+
 		$tabs_nav .= '<li><a href="#'.$id.'"'.$default.'>'.$tab_atts['title'].'</a></li>';
 		$tabs_content .= '<li id="'.$id.'"'.$default.'>'.$tab_atts['content'].'</li>';
     }
@@ -180,7 +189,7 @@ function ewd_shortcode_tabs_func( $atts, $content = null ) {
     $tabs_output .= $tabs_nav . $tabs_content;
     $tabs_output .= '</div><!-- tabs-wrapper end -->';
     $tabs_output .= '<div class="clear"></div>';
-	
+
     return $tabs_output;
 }
 add_shortcode('tabs', 'ewd_shortcode_tabs_func');
@@ -194,7 +203,7 @@ function ewd_shortcode_toggle( $atts, $content = null ) {
 
     $html = '<h4 class="slide_toggle"><a href="#">' .$title. '</a></h4>';
     $html .= '<div class="slide_toggle_content" style="display: none;">'.wpautop(do_shortcode($content)).'</div>';
-    
+
 	return $html;
 }
 add_shortcode('toggle_content', 'ewd_shortcode_toggle');
