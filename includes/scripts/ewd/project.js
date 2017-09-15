@@ -42,17 +42,16 @@ function footerFixes() {
 jQuery(function($){
     // Initial state of toggle (hide)
     $(".slide_toggle_content").hide();
-    // Process Toggle click (http://api.jquery.com/toggle/)
-    $(".slide_toggle").toggle(function(){
-        $(this).addClass("clicked");
-        // $(this).html('Less&hellip;');
-    }, function () {
-        $(this).removeClass("clicked");
-        // $(this).html('More...');
-    });
-    // Toggle animation (http://api.jquery.com/slideToggle/)
-    $(".slide_toggle").click(function(){
-        $(this).prev(".slide_toggle_content").slideToggle();
+    $(".slide_toggle").click(function(e){
+        e.preventDefault();
+
+        if ($(this).hasClass('clicked')) {
+            $(this).removeClass('clicked');
+        } else {
+            $(this).addClass('clicked');
+        }
+
+        $(this).next(".slide_toggle_content").slideToggle();
     });
 });
 
