@@ -75,5 +75,6 @@ module.exports = function(grunt) {
       grunt.loadNpmTasks('grunt-contrib-less');
 
       // Default task(s).
-      grunt.registerTask('default', ['less', 'concat', 'uglify']);
+      grunt.registerTask('build', ['less', 'concat', 'uglify']);
+      grunt.registerTask('default', ['build', 'watch']);
 };
