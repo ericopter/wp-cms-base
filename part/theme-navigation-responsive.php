@@ -1,7 +1,7 @@
 <?php
 if (function_exists('of_get_option') && of_get_option('site-responsive') == 'yes'):
     $args = array(
-        'theme_location'    => 'header-menu',
+        'theme_location'    => '',
         'container'         => false,
         'menu_id'           => 'responsive',
         'menu_class'        => 'vert-nav',
@@ -13,7 +13,7 @@ if (function_exists('of_get_option') && of_get_option('site-responsive') == 'yes
 ?>
 <div id="responsive-menu">
     <div class="container">
-        <a class="toggleMenu" href="#">Menu<span class="arrow"></span></a>
+        <a class="toggleMenu" href="#">Menu<span class="handle"></span></a>
         <?php
         echo $menu;
         ?>

@@ -16,18 +16,15 @@
     padding-left: 10px;
     text-align: left;
   }
-  .arrow {
+  .handle {
     width: 33px;
     height: 33px;
     margin: 0;
-    background: url('../images/arrow.png') no-repeat;
+    background: url('../images/menu-black.png') no-repeat;
     display: block;
     float: right;
-    line-height: 44px;
-    margin-top: 4px;
-  }
-  .arrow.active {
-    background-position: -33px 0px;
+    line-height: 33px;
+    margin-top: 11px;
   }
   #responsive-menu ul {
     display: none;

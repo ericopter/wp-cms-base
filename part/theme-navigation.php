@@ -20,4 +20,5 @@ if ($menu) :
 </div> <!-- end #header-navigation -->
 <?php
 endif;
+echo get_template_part('part/theme', 'navigation-responsive');
 ?>

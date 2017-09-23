@@ -890,9 +890,6 @@ or wrap each row of columns in a <div class="row"> */
 #responsive-menu {
   display: none;
 }
-body {
-  background: url('../images/Skeleton-Grid.png') repeat-y center top;
-}
 /*
  * jQuery FlexSlider v2.6.4
  * http://www.woothemes.com/flexslider/
@@ -1231,4 +1228,7 @@ html[xmlns] .flexslider .slides {
 #gallery-thumbs li img {
   width: 100%;
   height: auto;
+}
+body {
+  background: url('../images/Skeleton-Grid.png') repeat-y center top;
 }
