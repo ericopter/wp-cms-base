@@ -108,7 +108,7 @@ function ewd_general_javascript()
 	);
 }
 
-add_action('wp_enqueue_scripts', 'ewd_general_javascript');
+add_action('wp_footer', 'ewd_general_javascript');
 
 /**
  * Function for linking to custom css files
