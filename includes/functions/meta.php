@@ -11,7 +11,6 @@ function ewd_remove_headlinks()
 	remove_action('wp_head', 'wlwmanifest_link');
 	remove_action('wp_head', 'wp_generator');
 }
-
 add_action('init', 'ewd_remove_headlinks');
 
 /**
@@ -50,11 +49,6 @@ function ewd_meta_tags()
 	$description = null;
 	$keywords = null;
 
-	// output responsive meta tag if options set
-	if (function_exists('of_get_option') && of_get_option('site-responsive') == 'yes') {
-		echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-	}
-
 	// if we have theme options and the meta description/keywords value is set
 	if (function_exists('of_get_option')) {
 		$description = of_get_option('meta-description') ?
@@ -89,7 +83,7 @@ function ewd_jquery() {
 		'jquery',
 		get_template_directory_uri() . '/js/jquery.3.2.1.min.js',
 		null ,
-		'1.8.3'
+		'3.2.1'
 	);
 	wp_enqueue_script('jquery');
 }
@@ -107,7 +101,6 @@ function ewd_general_javascript()
 		array('jquery')
 	);
 }
-
 add_action('wp_footer', 'ewd_general_javascript');
 
 /**
@@ -117,7 +110,6 @@ function ewd_general_css()
 {
 	wp_enqueue_style('build');
 }
-
 add_action('wp_print_styles', 'ewd_general_css');
 
 /**
@@ -149,5 +141,4 @@ function ewd_analytics()
 <?php
 	endif;
 }
-
 add_action('ewd_post_wp_head', 'ewd_analytics');

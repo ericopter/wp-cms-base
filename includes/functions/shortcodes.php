@@ -40,6 +40,7 @@ function ewd_add_tinymce_plugin($plugin_array)
  */
 function ewd_register_shortcode_button($buttons) {
 	array_push($buttons, "ewd_tinymce_shortcodes_select");
+
 	return $buttons;
 }
 
@@ -50,6 +51,7 @@ add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
  */
 function my_mce_buttons_2( $buttons ) {
     array_unshift( $buttons, 'styleselect' );
+
     return $buttons;
 }
 
@@ -96,7 +98,7 @@ function ewd_shortcode_templatedirectoryurl($atts)
 {
     return get_template_directory_uri();
 }
-add_shortcode('templatedir', 'ewd_shortcode_templatedirectoryurl');
+add_shortcode('tempdiruri', 'ewd_shortcode_templatedirectoryurl');
 
 /**
  * Outputs a clearing element
@@ -154,8 +156,11 @@ function ewd_shortcode_tab_func( $atts, $content = null ) {
     extract(shortcode_atts(array(
 	    'title'	=> '',
     ), $atts));
+
     global $tabs;
+
     $tabs[] = array('title' => $title, 'content' => trim(wpautop(do_shortcode($content))));
+
     return $tabs;
 }
 add_shortcode('tab', 'ewd_shortcode_tab_func');
@@ -168,7 +173,9 @@ add_shortcode('tab', 'ewd_shortcode_tab_func');
  */
 function ewd_shortcode_tabs_func( $atts, $content = null ) {
     global $tabs;
+
     $tabs = array(); // clear the array
+
 	do_shortcode($content); // execute the '[tab]' shortcode first to get the title and content
 
     $tabs_nav = '<div class="clear"></div>';

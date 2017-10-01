@@ -267,25 +267,6 @@ jQuery(document).ready(function($) {
 		$('#section-slideshow-navigation').slideToggle();
 	});
 
-	/*
-		Recaptcha Options
-	*/
-	if ($('#use-recaptcha:checked').val() !== undefined) {
-		$('#section-recaptcha-public-key').show();
-		$('#section-recaptcha-private-key').show();
-		$('#section-recaptcha-theme').show();
-	} else {
-		$('#section-recaptcha-public-key').hide();
-		$('#section-recaptcha-private-key').hide();
-		$('#section-recaptcha-theme').hide();
-	}
-
-	$('#use-recaptcha').click(function() {
-		$('#section-recaptcha-public-key').slideToggle(400);
-		$('#section-recaptcha-private-key').slideToggle(400);
-		$('#section-recaptcha-theme').slideToggle(400);
-	});
-
 });
 </script>
 
