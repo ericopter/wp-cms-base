@@ -1,32 +1,36 @@
 @import "variables.less";
 @import "mixins.less";
-@import "menus-responsive.less";
+
+/* #Regular Desktop Grid
+================================================== */
+@media only screen and (min-width: @gridTotalWidth) and (max-width: (@gridLargeTotalWidth - 1)) {
+    #grid > .core(@gridColumnWidth, @gridColumnMargin, @gridColumns);
+}
 
 /* #Tablet (Portrait)
 ================================================== */
 
-/* Note: Design for a width of 768px */
+/* Note: Design for a width of @gridTabletWidth */
 
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+@media only screen and (min-width: @gridTabletWidth) and (max-width: (@gridTotalWidth - 1)) {
 	#grid > .core (@grid768ColumnWidth, @gridColumnMargin, @gridColumns)
-}
-
-
-/*  #Mobile (Portrait)
-================================================== */
-
-/* Note: Design for a width of 320px */
-
-@media only screen and (max-width: 767px) {
-	#grid > .mobile(@gridMobilePortraitWidth, @gridColumns);
 }
 
 
 /* #Mobile (Landscape)
 ================================================== */
 
-/* Note: Design for a width of 480px */
+/* Note: Design for a width of @gridMobileLandscapeWidth */
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: @gridMobileLandscapeWidth) and (max-width: (@gridTabletWidth - 1)) {
     #grid > .mobile(@gridMobileLandscapeWidth, @gridColumns);
+}
+
+/*  #Mobile (Portrait)
+================================================== */
+
+/* Note: Design for a width of @gridMobilePortraitWidth */
+
+@media only screen and (max-width: (@gridMobileLandscapeWidth - 1)) {
+    #grid > .mobile(@gridMobilePortraitWidth, @gridColumns);
 }

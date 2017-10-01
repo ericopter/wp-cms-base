@@ -47,12 +47,12 @@ function remove_thumbnail_height($html) {
  * Replaces image width value based on theme width option
  */
 function set_isotope_image_width($html) {
-	
+
 	$width = 218;
-	
+
 	// remove the "height" attribute to prevent image distorting
 	$html = remove_thumbnail_height($html);
-	
+
     $html = preg_replace('/width=\"\d*\"\s/', "width=\"$width\" ", $html);
 
     return $html;
@@ -62,13 +62,13 @@ function set_isotope_image_width($html) {
  * Display navigation to next/previous pages when applicable
  */
 function ewd_content_nav($nav_id = null, $query = null) {
-	
+
 	if ($query === null) {
 		global $wp_query;
 		$query = $wp_query;
-	} 
+	}
 
-	if ($query->max_num_pages > 1) : 
+	if ($query->max_num_pages > 1) :
 ?>
 <nav id="<?php echo $nav_id ?>">
 	<div class="nav-previous content-nav">
@@ -78,7 +78,7 @@ function ewd_content_nav($nav_id = null, $query = null) {
 	<div class="nav-next content-nav">
 		<?php next_posts_link(__('Next Page<span class="meta-nav">&rarr;</span>', 'echotheme')); ?>
 	</div>
-	
+
 	<div class="clear"></div>
 </nav><!-- #category-navigation -->
 <?php
@@ -132,20 +132,20 @@ function ewd_comment($comment, $args, $depth) {
 								sprintf(__('%1$s at %2$s', 'echotheme'), get_comment_date(), get_comment_time())
 							)
 						);
-					
-					edit_comment_link(__('Edit', 'echotheme'), '<span class="edit-link">', '</span>'); 
+
+					edit_comment_link(__('Edit', 'echotheme'), '<span class="edit-link">', '</span>');
 					?>
 				</div><!-- .comment-author .vcard -->
 
-				<?php 
-				if ($comment->comment_approved == '0') : 
+				<?php
+				if ($comment->comment_approved == '0') :
 				?>
 				<em class="comment-awaiting-moderation">
 					<?php _e('Your comment is awaiting moderation.', 'echotheme'); ?>
 				</em>
 				<br />
-				<?php 
-				endif; 
+				<?php
+				endif;
 				?>
 
 			</footer>
@@ -155,12 +155,12 @@ function ewd_comment($comment, $args, $depth) {
 			</div>
 
 			<div class="reply">
-				<?php 
+				<?php
 				comment_reply_link(array_merge($args, array(
-					'reply_text' => __('Reply <span>&darr;</span>', 'echotheme'), 
-					'depth' => $depth, 
+					'reply_text' => __('Reply <span>&darr;</span>', 'echotheme'),
+					'depth' => $depth,
 					'max_depth' => $args['max_depth']
-				))); 
+				)));
 				?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
@@ -176,13 +176,9 @@ function ewd_comment($comment, $args, $depth) {
 function content_class()
 {
 	$class = "span10";
-	
-	if (function_exists('of_get_option') && 'left' == of_get_option('site-sidebar-position')) {
-		$class .= ' push6';
-	}
-	
+
 	echo $class;
-	
+
 }
 
 /**
@@ -191,11 +187,7 @@ function content_class()
 function sidebar_class()
 {
 	$class = "span6";
-	
-	if (function_exists('of_get_option') && 'left' == of_get_option('site-sidebar-position')) {
-		$class .= ' pull10';
-	}
-	
+
 	echo $class;
 }
 

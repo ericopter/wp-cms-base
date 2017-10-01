@@ -1,18 +1,18 @@
-/* #Base 960 Grid
+/* #Large Desktop Grid
 ================================================== */
-#grid > .core(@gridColumnWidth, @gridColumnMargin, @gridColumns);
+#grid > .core(@gridLargeColumnWidth, @gridColumnMargin, @gridColumns);
 
 
 /* #Clearing
 ================================================== */
 
 /* Self Clearing Goodness */
-.container:after { 
-	content: "\0020"; 
-	display: block; 
-	height: 0; 
-	clear: both; 
-	visibility: hidden; 
+.container:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
 }
 
 /* Use clearfix class on parent to clear nested columns,
@@ -26,12 +26,12 @@ or wrap each row of columns in a <div class="row"> */
 	overflow: hidden;
 	visibility: hidden;
 	width: 0;
-	height: 0; 
+	height: 0;
 }
 
 .row:after,
 .clearfix:after {
-	clear: both; 
+	clear: both;
 }
 
 .row,

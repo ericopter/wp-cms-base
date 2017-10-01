@@ -52,13 +52,5 @@ function ewd_register_styles()
 		THEME_VERSION,
 		'screen'
 	);
-
-	wp_register_style(
-		'responsive',
-		get_bloginfo('template_url') . '/css/responsive.min.css',
-		array('build'),
-		THEME_VERSION,
-		'screen'
-	);
 }
 add_action('after_setup_theme', 'ewd_register_styles');

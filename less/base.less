@@ -21,7 +21,7 @@ h6 {
 	margin : 0 0 (@baseLineHeight / 2);
 	color: @headingBaseFontColor;
 	font-family: @headingBaseFontFamily;
-	font-weight: @headingBaseFontWeight; 
+	font-weight: @headingBaseFontWeight;
 }
 
 h1 a,
@@ -29,140 +29,140 @@ h2 a,
 h3 a,
 h4 a,
 h5 a,
-h6 a { 
-	font-weight: inherit; 
+h6 a {
+	font-weight: inherit;
 }
 
 h1,
 h2,
-h3 { 
-	line-height: @baseLineHeight * 2; 
+h3 {
+	line-height: @baseLineHeight * 2;
 }
 
-h1 { 
-	font-size: @baseFontSize * 2.75; 
-} 
-h2 { 
-	font-size: @baseFontSize * 2.25; 
-} 
-h3 { 
-	font-size: @baseFontSize * 1.75; 
-} 
-h4 { 
-	font-size: @baseFontSize * 1.25; 
+h1 {
+	font-size: @baseFontSize * 2.75;
 }
-h5 { 
-	font-size: @baseFontSize; 
+h2 {
+	font-size: @baseFontSize * 2.25;
 }
-h6 { 
-	font-size: @baseFontSize * 0.85; 
-} 
-
-h1 small { 
-	font-size: @baseFontSize * 1.75; 
+h3 {
+	font-size: @baseFontSize * 1.75;
 }
-h2 small { 
-	font-size: @baseFontSize * 1.25; 
+h4 {
+	font-size: @baseFontSize * 1.25;
 }
-h3 small { 
-	font-size: @baseFontSize; 
+h5 {
+	font-size: @baseFontSize;
 }
-h4 small { 
-	font-size: @baseFontSize; 
+h6 {
+	font-size: @baseFontSize * 0.85;
 }
 
-.subheader { 
-	color: lighten(@headingBaseFontColor, 15%); 
+h1 small {
+	font-size: @baseFontSize * 1.75;
+}
+h2 small {
+	font-size: @baseFontSize * 1.25;
+}
+h3 small {
+	font-size: @baseFontSize;
+}
+h4 small {
+	font-size: @baseFontSize;
 }
 
-
-p { 
-	margin: @paragraphMargin; 
-}
-
-p img { 
-	margin: 0; 
-}
-
-p.lead { 
-	font-size: @baseFontSize * 1.5; 
-	line-height: @baseLineHeight * 1.35; 
-	color: #777;  
+.subheader {
+	color: lighten(@headingBaseFontColor, 15%);
 }
 
 
-em { 
-	font-style: italic; 
+p {
+	margin: @paragraphMargin;
 }
 
-strong { 
-	font-weight: bold; 
-	color: darken(@baseFontColor, 10%); 
+p img {
+	margin: 0;
 }
 
-small { 
-	font-size: @baseFontSize * 0.8; 
+p.lead {
+	font-size: @baseFontSize * 1.5;
+	line-height: @baseLineHeight * 1.35;
+	color: #777;
+}
+
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+	color: darken(@baseFontColor, 10%);
+}
+
+small {
+	font-size: @baseFontSize * 0.8;
 }
 
 
 /* #Blockquotes
 ================================================== */
 blockquote,
-blockquote p { 
-	font-size: @baseFontSize * 1.2; 
-	line-height: @baseLineHeight * 1.2; 
-	color: lighten(@baseFontColor, 25%); 
-	font-style: italic; 
+blockquote p {
+	font-size: @baseFontSize * 1.2;
+	line-height: @baseLineHeight * 1.2;
+	color: lighten(@baseFontColor, 25%);
+	font-style: italic;
 }
 
-blockquote { 
-	margin: @blockquoteMargin; 
-	padding: @blockquotePadding; 
-	border-left: @blockquoteBorderSize solid @blockquoteBorderColor; 
+blockquote {
+	margin: @blockquoteMargin;
+	padding: @blockquotePadding;
+	border-left: @blockquoteBorderSize solid @blockquoteBorderColor;
 }
 
-blockquote cite { 
-	display: block; 
-	font-size: @baseFontSize * 0.85; 
-	color: lighten(@baseFontColor, 20%); 
+blockquote cite {
+	display: block;
+	font-size: @baseFontSize * 0.85;
+	color: lighten(@baseFontColor, 20%);
 }
 
-blockquote cite:before { 
-	content: "\2014 \0020"; 
+blockquote cite:before {
+	content: "\2014 \0020";
 }
 
 blockquote cite a,
 blockquote cite a:visited,
-blockquote cite a:visited { 
-	color: lighten(@baseFontColor, 20%); 
+blockquote cite a:visited {
+	color: lighten(@baseFontColor, 20%);
 }
 
-hr { 
-	border: solid #ddd; 
-	border-width: 1px 0 0; 
-	clear: both; 
-	margin: 10px 0 30px; 
-	height: 0; 
+hr {
+	border: solid #ddd;
+	border-width: 1px 0 0;
+	clear: both;
+	margin: 10px 0 30px;
+	height: 0;
 }
 
 
 /* #Links
 ================================================== */
 a,
-a:visited { 
-	color: @linkColor; 
-	text-decoration: 
-	underline; outline: 0; 
+a:visited {
+	color: @linkColor;
+	text-decoration:
+	underline; outline: 0;
 }
 
 a:hover,
-a:focus { 
-	color: @linkColorHover; 
+a:focus {
+	color: @linkColorHover;
 }
 
 p a,
-p a:visited { 
-	line-height: inherit; 
+p a:visited {
+	line-height: inherit;
 }
 
 
@@ -176,7 +176,7 @@ img {
 
 img.scale-with-grid {
 	max-width: 100%;
-	height: auto; 
+	height: auto;
 }
 
 /* #Buttons
@@ -203,7 +203,7 @@ input[type="button"] {
 	margin: @buttonMargin;
 	line-height: normal;
 	padding: @buttonPadding;
-	font-family: @baseFontFamily; 
+	font-family: @baseFontFamily;
 }
 
 
@@ -216,7 +216,7 @@ input[type="button"]:hover {
 	.gradientBackground(#ddd);
 	border: 1px solid #888;
 	border-top: 1px solid #aaa;
-	border-left: 1px solid #aaa; 
+	border-left: 1px solid #aaa;
 }
 
 
@@ -238,7 +238,7 @@ input[type="button"].full-width {
 	width: 100%;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
-	text-align: center; 
+	text-align: center;
 }
 
 
@@ -251,14 +251,14 @@ padding: 0;
 
 /* #Misc
 ================================================== */
-.remove-bottom { 
-	margin-bottom: 0 !important; 
+.remove-bottom {
+	margin-bottom: 0 !important;
 }
 
-.half-bottom { 
-	margin-bottom: 10px !important; 
+.half-bottom {
+	margin-bottom: 10px !important;
 }
 
-.add-bottom { 
-	margin-bottom: 20px !important; 
+.add-bottom {
+	margin-bottom: 20px !important;
 }

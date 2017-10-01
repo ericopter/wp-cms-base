@@ -60,16 +60,23 @@
 @formTextAreaMinHeight:			60px;
 @formSelectPadding: 			4px 0;
 
+/* Grid Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 // Base Grid
 @rowMarginBottom : 				20px; 			// padding below .row
 @gridColumns :					16; 			// number of grid columns
-@gridColumnWidth : 				40px; 			// column content area
 @gridColumnMargin : 			10px; 			// margin width each side of column
 
-// Max width
-@gridBreakPoint :          (@gridColumns * (@gridColumnWidth + (@gridColumnMargin * 2)) - 1);
+// Extra Large
+@gridLargeColumnWidth :         50px;           // column content area
+@gridLargeTotalWidth :          (@gridColumns * (@gridLargeColumnWidth + (@gridColumnMargin *2)));
+
+// Regular Desktop
+@gridColumnWidth :              40px;           // column content area
+@gridTotalWidth :               (@gridColumns * (@gridColumnWidth + (@gridColumnMargin *2)));
 
 // 768 Grid
-@grid768ColumnWidth : 			(768 / @gridColumns) - (@gridColumnMargin * 2);
-@gridMobilePortraitWidth :		300px;
-@gridMobileLandscapeWidth : 	420px;
+@gridTabletWidth :              768px;
+@gridMobilePortraitWidth :      320px;
+@gridMobileLandscapeWidth :     620px;
+@grid768ColumnWidth : 			(@gridTabletWidth / @gridColumns) - (@gridColumnMargin * 2);

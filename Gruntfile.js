@@ -33,8 +33,7 @@ module.exports = function(grunt) {
                     sourceMap: true
                 },
                 files: {
-                    'css/build.min.css' : 'less/build.less',
-                    'css/responsive.min.css' : 'less/grid-responsive.less'
+                    'css/build.min.css' : 'less/build.less'
                 }
             }
         },

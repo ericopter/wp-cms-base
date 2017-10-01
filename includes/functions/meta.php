@@ -116,11 +116,6 @@ add_action('wp_enqueue_scripts', 'ewd_general_javascript');
 function ewd_general_css()
 {
 	wp_enqueue_style('build');
-
-	// Include the responsive stylesheet?
-	if (function_exists('of_get_option') && of_get_option('site-responsive') == 'yes') {
-		wp_enqueue_style('responsive');
-	}
 }
 
 add_action('wp_print_styles', 'ewd_general_css');

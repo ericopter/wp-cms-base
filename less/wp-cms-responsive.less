@@ -1,14 +1,20 @@
+@media only screen and (max-width: (@gridLargeTotalWidth - 1)) {
+    body {
+        background : url('../images/Skeleton-Grid.png') repeat-y center top;
+    }
+}
+
 /* #Tablet (Portrait)
 ================================================== */
 /* Note: Design for a width of 768px */
-@media only screen and (min-width: 768px) and (max-width: @gridBreakPoint) {}
-
-/*  #Mobile (Portrait)
-================================================== */
-/* Note: Design for a width of 320px */
-@media only screen and (max-width: 767px) {}
+@media only screen and (max-width: (@gridTotalWidth - 1)) {}
 
 /* #Mobile (Landscape)
 ================================================== */
 /* Note: Design for a width of 480px */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
+@media only screen and (max-width: (@gridTabletWidth - 1)) {}
+
+/*  #Mobile (Portrait)
+================================================== */
+/* Note: Design for a width of 320px */
+@media only screen and (max-width: (@gridMobileLandscapeWidth - 1)) {}
