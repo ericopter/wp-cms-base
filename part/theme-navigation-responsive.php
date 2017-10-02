@@ -1,15 +1,14 @@
 <?php
-if (function_exists('of_get_option') && of_get_option('site-responsive') == 'yes'):
-    $args = array(
-        'theme_location'    => '',
-        'container'         => false,
-        'menu_id'           => 'responsive',
-        'menu_class'        => 'vert-nav',
-        'echo'              => false,
-        'fallback_cb'       => false
-    );
-    $menu = wp_nav_menu($args);
-    if ($menu) :
+$args = array(
+    'theme_location'    => '',
+    'container'         => false,
+    'menu_id'           => 'responsive',
+    'menu_class'        => 'vert-nav',
+    'echo'              => false,
+    'fallback_cb'       => false
+);
+$menu = wp_nav_menu($args);
+if ($menu) :
 ?>
 <div id="responsive-menu">
     <div class="container">
@@ -27,6 +26,5 @@ $('.toggleMenu').click(function(e) {
 });
 </script>
 <?php
-    endif;
 endif;
 ?>
