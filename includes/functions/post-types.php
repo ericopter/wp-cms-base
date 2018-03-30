@@ -188,9 +188,9 @@ function save_postdata( $post_id ) {
 		return $post_id;
 	}
 
-	if( ereg('/\edit\.php', $_SERVER['REQUEST_URI']) ) { //Detects if the save action is coming from a quick edit/batch edit.
-		return $post_id;
-	}
+	if( preg_match('/\/edit\.php/', $_SERVER['REQUEST_URI']) ) { //Detects if the save action is coming from a quick edit/batch edit.
+        return $post_id;
+    }
 
 	foreach($meta_box_groups as $group) {
 		foreach($group as $meta_box) {
