@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/ericopter/wp-cms-base#readme",
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-less": "^1.4.1",
-    "grunt-contrib-uglify": "^3.0.1",
+    "grunt": "^1.0.3",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.0.0"
   }
 }

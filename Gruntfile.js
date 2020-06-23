@@ -30,7 +30,8 @@ module.exports = function(grunt) {
                 options: {
                     paths: ['less'],
                     compress: true,
-                    sourceMap: true
+                    sourceMap: true,
+                    sourceMapFilename: "build.min.css.map"
                 },
                 files: {
                     'css/build.min.css' : 'less/build.less'
